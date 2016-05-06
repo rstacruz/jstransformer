@@ -13,7 +13,7 @@ tr.normalizeFn = normalizeFn;
 tr.normalizeFnAsync = normalizeFnAsync;
 tr.normalize = normalize;
 tr.normalizeAsync = normalizeAsync;
-tr.readFile = Promise.denodeify(fs.readFile);
+tr.readFile = fs.readFile && Promise.denodeify(fs.readFile);
 tr.readFileSync = fs.readFileSync;
 
 function normalizeFn(result) {
